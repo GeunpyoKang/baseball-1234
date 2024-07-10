@@ -4,6 +4,9 @@ class Game:
 
     def __init__(self, answer):
         self.answer = list(str(answer))
+        self.initialize_was_strike()
+
+    def initialize_was_strike(self):
         self.was_strike = [False for _ in self.answer]
 
     def count_strike(self, target_list):
@@ -25,6 +28,7 @@ class Game:
         return cnt
 
     def check_answer(self, target):
+        self.initialize_was_strike()
         strike_cnt = self.count_strike(list(str(target)))
         ball_cnt = self.count_ball(list(str(target)))
 

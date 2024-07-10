@@ -25,14 +25,11 @@ class Game:
         return cnt
 
     def check_answer(self, target):
-        target_list = list(str(target))
-
-        strike = self.count_strike(target_list)
-        ball = self.count_ball(target_list)
-        solved = strike == 3
+        strike_cnt = self.count_strike(list(str(target)))
+        ball_cnt = self.count_ball(list(str(target)))
 
         return {
-            'solved': solved,
-            'strike': strike,
-            'ball': ball
+            'solved': strike_cnt == 3,
+            'strike': strike_cnt,
+            'ball': ball_cnt
         }

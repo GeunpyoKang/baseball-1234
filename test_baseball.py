@@ -17,13 +17,13 @@ class TestGame(TestCase):
         sut = Game(123)
         self.assertEqual(sut.check_answer(321), {
             'solved': False,
-            'strike': 0,
-            'ball': 3
+            'strike': 1,
+            'ball': 2
         })
         self.assertEqual(sut.check_answer(521), {
             'solved': False,
-            'strike': 0,
-            'ball': 2
+            'strike': 1,
+            'ball': 1
         })
         self.assertEqual(sut.check_answer(571), {
             'solved': False,
